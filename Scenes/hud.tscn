@@ -28,16 +28,16 @@ uppercase = true
 scale = Vector2(0.32, 0.32)
 
 [node name="Health" type="TextureProgressBar" parent="Node2D"]
-offset_left = 15.625
-offset_top = 178.12502
-offset_right = 2286.625
+offset_top = 178.125
+offset_right = 2271.0
 offset_bottom = 306.125
 value = 100.0
 texture_over = ExtResource("3_6fbih")
 texture_progress = ExtResource("4_t1xeu")
+texture_progress_offset = Vector2(-6, -8)
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(5, 112)
+position = Vector2(4.7683716e-07, 112)
 scale = Vector2(0.4, 0.4)
 
 [node name="Lifes" type="HBoxContainer" parent="Node2D2"]

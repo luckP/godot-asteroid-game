@@ -1,4 +1,4 @@
-class_name Asteroid extends Area2D
+class_name Asteroid extends RigidBody2D
 
 
 # --- DEFINITIONS ---
@@ -23,18 +23,21 @@ var type_data = {
 		"hp_mult": 0.8, 
 		"speed_mult": 1.2,
 		"points": 100,
+		"mass_mult": 1,
 	},
 	AstType.ROCK: {
 		"row": 1, 
 		"hp_mult": 1.0, 
 		"speed_mult": 1.0,
 		"points": 200,
+		"mass_mult": 2,
 	},
 	AstType.METAL: {
 		"row": 2, 
 		"hp_mult": 2.5, 
 		"speed_mult": 0.6,
 		"points": 300,
+		"mass_mult": 3,
 	}
 }
 
@@ -46,7 +49,8 @@ var size_data = {
 		"base_speed": 40.0,
 		"radius": 70.0,
 		"damage": 20,
-		"points_multiplier": 1
+		"points_multiplier": 1,
+		"mass": 100,
 	},
 	AstSize.MEDIUM: {
 		"col_start": 3,
@@ -54,7 +58,8 @@ var size_data = {
 		"base_speed": 70.0,
 		"radius": 45.0,
 		"damage": 10,
-		"points_multiplier": 0.5
+		"points_multiplier": 0.5,
+		"mass": 30,
 	},
 	AstSize.SMALL: {
 		"col_start": 6,
@@ -62,7 +67,8 @@ var size_data = {
 		"base_speed": 100.0,
 		"radius": 12.0,
 		"damage": 5,
-		"points_multiplier": 0.25
+		"points_multiplier": 0.25,
+		"mass": 10,
 	}
 }
 
@@ -109,6 +115,7 @@ func setup_asteroid():
 	var new_shape = CircleShape2D.new()
 	new_shape.radius = s_config["radius"]
 	points = int(t_config["points"] * s_config["points_multiplier"])
+	mass = int(t_config["mass_mult"] * s_config["mass"])
 	collider.shape = new_shape
 
 func _physics_process(delta: float) -> void:
