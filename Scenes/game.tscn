@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b344cqbdcqbhy"]
+
+[ext_resource type="Script" uid="uid://cbvuwvo1itjwi" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://c1owlh285f82h" path="res://Scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bs8k47mnno0tl" path="res://Scenes/hud.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://7ygmy5j4e3kq" path="res://Scenes/asteroid.tscn" id="3_wrm1d"]
+
+[sub_resource type="Curve2D" id="Curve2D_wrm1d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 95.1215, 0.083197355)
+}
+point_count = 1
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_qxrlw")
+asteroid_scene = ExtResource("3_wrm1d")
+
+[node name="UI" type="CanvasLayer" parent="."]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="HUD" parent="UI" instance=ExtResource("3_3dryh")]
+
+[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(640, 360)
+shoot_rate = 0.0
+
+[node name="Lasers" type="Node2D" parent="."]
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="AsteroidBase" parent="Asteroids" instance=ExtResource("3_wrm1d")]
+position = Vector2(426, 334)
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+wait_time = 2.31
+autostart = true
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-19.999996, 631.00006)
+scale = Vector2(13.118813, 613)
+curve = SubResource("Curve2D_wrm1d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(103.439255, 0.23164761)
+rotation = 0.02402852
+
+[node name="PlawerSpawn" type="Node2D" parent="."]
+position = Vector2(747, 342)

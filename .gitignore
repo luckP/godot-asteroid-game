@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot 3 specific
+.import/
+
+# Mono/C# specific (if you use C#)
+.mono/
+*.sln
+*.csproj
+
+# Editors and OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

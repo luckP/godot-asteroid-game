@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1owlh285f82h"]
+
+[ext_resource type="Texture2D" uid="uid://1uvqp83p8g6b" path="res://Assets/Sprites/Gemini_Generated_Image_fqvb5ofqvb5ofqvb.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://baeti5d5f0wxo" path="res://Scripts/player.gd" id="1_cvnsp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 26.666666
+height = 140.0
+
+[sub_resource type="Curve" id="Curve_cvnsp"]
+_data = [Vector2(0.017341048, 0.9871984), 0.0, 0.0, 0, 0, Vector2(0.1734104, 0.023879886), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.6, 0.6)
+collision_layer = 3
+collision_mask = 21
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+region_enabled = true
+region_rect = Rect2(94.543015, 64.212105, 162.83153, 160.45364)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Mozzle" type="Node2D" parent="."]
+position = Vector2(0, -96.666664)
+
+[node name="CPUParticles2DLeft" type="CPUParticles2D" parent="."]
+position = Vector2(-26.666666, 81.666664)
+amount = 1000
+emission_shape = 1
+emission_sphere_radius = 4.3
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_cvnsp")
+color = Color(0.8615142, 0.37055355, 0.312047, 1)
+
+[node name="CPUParticles2DRight" type="CPUParticles2D" parent="."]
+position = Vector2(26.666668, 81.66667)
+amount = 1000
+emission_shape = 1
+emission_sphere_radius = 4.3
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_cvnsp")
+color = Color(0.8615142, 0.37055355, 0.312047, 1)
