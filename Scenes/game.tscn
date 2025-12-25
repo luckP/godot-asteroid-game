@@ -23,7 +23,6 @@ transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(640, 360)
-shoot_rate = 0.0
 
 [node name="Lasers" type="Node2D" parent="."]
 
