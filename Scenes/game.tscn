@@ -20,6 +20,10 @@ scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="HUD" parent="UI" instance=ExtResource("3_3dryh")]
+offset_left = 23.333334
+offset_top = 24.666668
+offset_right = 63.333336
+offset_bottom = 64.66667
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(640, 360)
@@ -27,9 +31,6 @@ position = Vector2(640, 360)
 [node name="Lasers" type="Node2D" parent="."]
 
 [node name="Asteroids" type="Node2D" parent="."]
-
-[node name="AsteroidBase" parent="Asteroids" instance=ExtResource("3_wrm1d")]
-position = Vector2(426, 334)
 
 [node name="AsteroidTimer" type="Timer" parent="."]
 wait_time = 2.31

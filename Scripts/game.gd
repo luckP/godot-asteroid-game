@@ -10,6 +10,11 @@ var health := 0:
 	set(value):
 		health = value
 		hud.health = value
+
+@export var lifes := 0:
+	set(value):
+		lifes = value
+		hud.lives = value
 		
 @onready var hud = $UI/HUD
 @onready var lasers = $Lasers
@@ -23,10 +28,10 @@ var health := 0:
 
 # We NEED this back so Main can spawn brand new rocks from scratch
 @export var asteroid_scene: PackedScene 
-@export var lifes := 3
 
 func _ready() -> void:
 	score = 0
+	lifes = 3
 	# Connect player
 	player.connect("laser_shot", _on_player_laser_shot)
 	player.connect("player_take_damage", _on_player_take_damage)

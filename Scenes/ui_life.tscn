@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabqocsof7w1r"]
+
+[ext_resource type="Texture2D" uid="uid://5478vwqv5kq3" path="res://Assets/Arts/UI/ship-life.png" id="1_kqeco"]
+
+[node name="UILife" type="TextureRect"]
+offset_left = 9.999999
+offset_top = -4.999998
+offset_right = 102.0
+offset_bottom = 91.0
+texture = ExtResource("1_kqeco")
