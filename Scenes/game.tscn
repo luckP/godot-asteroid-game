@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b344cqbdcqbhy"]
+[gd_scene load_steps=7 format=3 uid="uid://b344cqbdcqbhy"]
 
 [ext_resource type="Script" uid="uid://cbvuwvo1itjwi" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://c1owlh285f82h" path="res://Scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bs8k47mnno0tl" path="res://Scenes/hud.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://7ygmy5j4e3kq" path="res://Scenes/asteroid.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://dfdjnoisgivs7" path="res://Scenes/game_over_screen.tscn" id="4_wowpa"]
 
 [sub_resource type="Curve2D" id="Curve2D_wrm1d"]
 _data = {
@@ -24,6 +25,9 @@ offset_left = 23.333334
 offset_top = 24.666668
 offset_right = 63.333336
 offset_bottom = 64.66667
+
+[node name="GameOverScreen" parent="UI" instance=ExtResource("4_wowpa")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(640, 360)
